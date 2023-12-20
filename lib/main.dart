@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '23_12_20/practice_1.dart';
+import '23_12_20/practice_2.dart';
 import 'list_mapper_screen.dart';
 
 void main() {
@@ -11,6 +12,7 @@ final Map<String, Widget> widgetList = {
     title: '[23/12/20] 생일선물카드',
     widgetMapper: {
       '1. 생일선물카드 Ver1': BirthdayCardScreenVer1(),
+      '2. 생일선물카드 Ver2': BirthdayCardScreenVer2(),
     },
   ),
 };
