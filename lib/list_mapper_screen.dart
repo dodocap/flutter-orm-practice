@@ -27,9 +27,9 @@ class _MainListPageState extends State<MainListPage> {
         child: ListView(
             children: widget._widgetMapper.entries
                 .map((e) => ListTile(
-                  title: Text(e.key),
-                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => e.value)),
-                ))
+                      title: Text(e.key),
+                      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => e.value)),
+                    ))
                 .toList()),
       ),
     );
