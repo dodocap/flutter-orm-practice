@@ -216,6 +216,7 @@ class _StarbucksCloneScreenState extends State<StarbucksCloneScreen> {
                               Text('See all', style: TextStyle(fontSize: 15)),
                             ],
                           ),
+                          const SizedBox(height: 16),
                           SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: SizedBox(
@@ -238,7 +239,19 @@ class _StarbucksCloneScreenState extends State<StarbucksCloneScreen> {
                         ],
                       ),
                     ),
-                  )
+                  ),
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate((context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(left: 8.0, right: 8.0, bottom: 4.0),
+                        child: Card(
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                          elevation: 3,
+                          child: Image.asset('assets/starbucks/06_banner_0${index + 1}.png'),
+                        ),
+                      );
+                    }, childCount: 2),
+                  ),
                   /*SliverList(
                     delegate: SliverChildBuilderDelegate(
                       (BuildContext context, int index) {
