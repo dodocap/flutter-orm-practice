@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -25,6 +26,21 @@ class _StarbucksCloneScreenState extends State<StarbucksCloneScreen> {
     setState(() {
       _isLoading = false;
     });
+  }
+
+  Future<Map<String, double>> _getImageSize(String imagePath) async {
+    Completer<ImageInfo> completer = Completer();
+
+    Image(image: AssetImage(imagePath))
+        .image
+        .resolve(const ImageConfiguration())
+        .addListener(ImageStreamListener((ImageInfo image, bool synchronousCall) {
+      completer.complete(image);
+    }));
+
+    final ImageInfo imageInfo = await completer.future;
+
+    return {'width': imageInfo.image.width.toDouble(), 'height': imageInfo.image.height.toDouble()};
   }
 
   @override
@@ -182,6 +198,44 @@ class _StarbucksCloneScreenState extends State<StarbucksCloneScreen> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(5),
                         child: Image.asset('assets/starbucks/04_christmas_event.png'),
+                      ),
+                    ),
+                  ),
+                  SliverToBoxAdapter(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        children: [
+                          const Row(
+                            children: [
+                              Text(
+                                '''What's New''',
+                                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
+                              Spacer(),
+                              Text('See all', style: TextStyle(fontSize: 15)),
+                            ],
+                          ),
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: SizedBox(
+                              height: 225,
+                              child: Row(
+                                children:
+                                  List.generate(13, (index) {
+                                    return Padding(
+                                      padding: EdgeInsets.only(right: (index != 12) ? 8.0 : 0),
+                                      child: Image.asset(
+                                        'assets/starbucks/05_whats_new_${(index+1).toString().padLeft(2, '0')}.jpg',
+                                        fit: BoxFit.contain,
+                                      ),
+                                    );
+                                  }
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   )
