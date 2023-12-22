@@ -145,17 +145,20 @@ class _StarbucksCloneScreenState extends State<StarbucksCloneScreen> {
                     child: Column(
                       children: [
                         const Padding(
-                          padding: EdgeInsets.only(top : 16.0, left: 32.0, right: 32.0),
+                          padding: EdgeInsets.only(top: 16.0, left: 32.0, right: 32.0),
                           child: Row(
                             children: [
-                              Text('Quick Order', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                              Text(
+                                'Quick Order',
+                                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                              ),
                               Spacer(),
                               Text('최근 주문', style: TextStyle(fontSize: 15)),
                             ],
                           ),
                         ),
                         SizedBox(
-                          height: 200,
+                          height: 180,
                           child: PageView.builder(
                             itemBuilder: (context, index) {
                               return Padding(
@@ -173,6 +176,15 @@ class _StarbucksCloneScreenState extends State<StarbucksCloneScreen> {
                       ],
                     ),
                   ),
+                  SliverToBoxAdapter(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(5),
+                        child: Image.asset('assets/starbucks/04_christmas_event.png'),
+                      ),
+                    ),
+                  )
                   /*SliverList(
                     delegate: SliverChildBuilderDelegate(
                       (BuildContext context, int index) {
