@@ -42,7 +42,7 @@ class _StarbucksCloneScreenState extends State<StarbucksCloneScreen> {
                   SliverAppBar(
                     floating: false,
                     pinned: true,
-                    expandedHeight: bannerHeight + 50,
+                    expandedHeight: bannerHeight + 45,
                     scrolledUnderElevation: 0,
                     automaticallyImplyLeading: false,
                     flexibleSpace: FlexibleSpaceBar(
@@ -124,17 +124,56 @@ class _StarbucksCloneScreenState extends State<StarbucksCloneScreen> {
                               ),
                               const Spacer(),
                               IconButton(
-                                  onPressed: () {},
-                                  icon: SvgPicture.asset(
-                                    'assets/icons/youtube_alarm.svg',
-                                    width: 24,
-                                    height: 24,
-                                  )),
+                                onPressed: () {},
+                                icon: SvgPicture.asset(
+                                  'assets/icons/common_alarm.svg',
+                                  width: 24,
+                                  height: 24,
+                                ),
+                              ),
                             ],
                           ),
                         )),
                   ),
-                  SliverList(
+                  SliverToBoxAdapter(
+                      child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Image.asset('assets/starbucks/01_main_banner.png'),
+                  )),
+                  SliverToBoxAdapter(child: Image.asset('assets/starbucks/02_01_siren_order.png')),
+                  SliverToBoxAdapter(
+                    child: Column(
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.only(top : 16.0, left: 32.0, right: 32.0),
+                          child: Row(
+                            children: [
+                              Text('Quick Order', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                              Spacer(),
+                              Text('최근 주문', style: TextStyle(fontSize: 15)),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 200,
+                          child: PageView.builder(
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.only(right: 16.0),
+                                child: Image.asset(
+                                  'assets/starbucks/03_quick_0${index + 1}.png',
+                                  fit: BoxFit.contain,
+                                ),
+                              );
+                            },
+                            controller: PageController(viewportFraction: 0.8),
+                            itemCount: 2,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  /*SliverList(
                     delegate: SliverChildBuilderDelegate(
                       (BuildContext context, int index) {
                         return const Text(
@@ -144,7 +183,7 @@ class _StarbucksCloneScreenState extends State<StarbucksCloneScreen> {
                       },
                       childCount: 30,
                     ),
-                  ),
+                  ),*/
                 ],
               ),
             ),

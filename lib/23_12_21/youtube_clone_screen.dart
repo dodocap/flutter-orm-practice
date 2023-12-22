@@ -62,7 +62,7 @@ class _YoutubeCloneScreenState extends State<YoutubeCloneScreen> {
                     ),
                     IconButton(
                       icon: SvgPicture.asset(
-                        'assets/icons/youtube_alarm.svg',
+                        'assets/icons/common_alarm.svg',
                         width: 24,
                         height: 24,
                       ),
