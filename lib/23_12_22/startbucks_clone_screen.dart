@@ -252,6 +252,58 @@ class _StarbucksCloneScreenState extends State<StarbucksCloneScreen> {
                       );
                     }, childCount: 2),
                   ),
+                  SliverToBoxAdapter(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 16),
+                          RichText(
+                            text: const TextSpan(
+                              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                              children: [
+                                TextSpan(text: '도도', style: TextStyle(color: Color.fromARGB(255, 218, 165, 32))),
+                                TextSpan(text: '님을 위한 추천 메뉴 ', style: TextStyle(color: Colors.black)),
+                              ]
+                            ),
+                          ),
+                          const SizedBox(height: 16,),
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: SizedBox(
+                              height: 175,
+                              child: Row(
+                                children:
+                                List.generate(8, (index) {
+                                  return Padding(
+                                    padding: EdgeInsets.only(right: (index != 8) ? 16.0 : 0),
+                                    child: Image.asset(
+                                      'assets/starbucks/07_coffee_${(index+1).toString().padLeft(2, '0')}.jpg',
+                                      fit: BoxFit.contain,
+                                    ),
+                                  );
+                                }
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SliverList(
+                    delegate: SliverChildBuilderDelegate((context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(left: 8.0, right: 8.0, bottom: 4.0),
+                        child: Card(
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                          elevation: 3,
+                          child: Image.asset('assets/starbucks/08_banner_0${index + 1}.png'),
+                        ),
+                      );
+                    }, childCount: 5),
+                  ),
                   /*SliverList(
                     delegate: SliverChildBuilderDelegate(
                       (BuildContext context, int index) {
