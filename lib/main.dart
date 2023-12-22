@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:orm_practice/23_12_21/youtube_clone_screen.dart';
+import 'package:orm_practice/23_12_22/startbucks_clone_screen.dart';
 import '23_12_20/practice_1.dart';
 import '23_12_20/practice_2.dart';
 import '23_12_20/practice_3.dart';
@@ -19,6 +20,7 @@ final Map<String, Widget> widgetList = {
     },
   ),
   '[23/12/21] 클론 UI - Youtube': YoutubeCloneScreen(),
+  '[23/12/22] 클론 UI - Starbucks': StarbucksCloneScreen(),
 };
 
 class MyApp extends StatelessWidget {
