@@ -285,23 +285,26 @@ class _StarbucksCloneScreenState extends State<StarbucksCloneScreen> {
               }, childCount: 2),
             ),
             SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 16),
-                    RichText(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 16),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: RichText(
                       text: const TextSpan(style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600), children: [
                         TextSpan(text: '도도', style: TextStyle(color: Color.fromARGB(255, 218, 165, 32))),
                         TextSpan(text: '님을 위한 추천 메뉴 ', style: TextStyle(color: Colors.black)),
                       ]),
                     ),
-                    const SizedBox(
-                      height: 16,
-                    ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
+                  ),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       child: SizedBox(
                         height: 175,
                         child: Row(
@@ -317,8 +320,8 @@ class _StarbucksCloneScreenState extends State<StarbucksCloneScreen> {
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             SliverList(
