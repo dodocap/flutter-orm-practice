@@ -7,6 +7,7 @@ import 'package:orm_practice/23_12_22/startbucks_clone_screen.dart';
 import 'package:orm_practice/23_12_26/my_animated_container.dart';
 import 'package:orm_practice/23_12_26/my_animated_opacity.dart';
 import 'package:orm_practice/23_12_26/my_drawer.dart';
+import 'package:orm_practice/23_12_26/my_orientation.dart';
 import 'package:orm_practice/23_12_26/my_snack_bar.dart';
 import 'package:orm_practice/list_mapper_screen.dart';
 
@@ -32,6 +33,7 @@ final Map<String, Widget> widgetList = {
         '2. AnimatedOpacity' : MyAnimatedOpacity(),
         '3. Drawer' : MyDrawer(),
         '4. SnackBar' : MySnackBar(),
+        '5. OrientationBuilder' : MyOrientation(),
       },
   ),
 };
