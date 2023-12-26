@@ -6,6 +6,7 @@ import 'package:orm_practice/23_12_21/youtube_clone_screen.dart';
 import 'package:orm_practice/23_12_22/startbucks_clone_screen.dart';
 import 'package:orm_practice/23_12_26/my_animated_container.dart';
 import 'package:orm_practice/23_12_26/my_animated_opacity.dart';
+import 'package:orm_practice/23_12_26/my_drawer.dart';
 import 'package:orm_practice/list_mapper_screen.dart';
 
 void main() {
@@ -24,10 +25,11 @@ final Map<String, Widget> widgetList = {
   '[23/12/21] 클론 UI - Youtube': YoutubeCloneScreen(),
   '[23/12/22] 클론 UI - Starbucks': StarbucksCloneScreen(),
   '[23/12/26] Flutter Cookbook' : const MainListPage(
-      title: '[23/12/26] Flutter Cookbook',
+      title: 'Flutter Cookbook',
       widgetMapper: {
         '1. AnimatedContainer' : MyAnimatedContainer(),
         '2. AnimatedOpacity' : MyAnimatedOpacity(),
+        '3. Drawer' : MyDrawer(),
       },
   ),
 };
